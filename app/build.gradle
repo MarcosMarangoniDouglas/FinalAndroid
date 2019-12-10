@@ -27,7 +27,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    /* GSON library */
     implementation 'com.google.code.gson:gson:2.8.6'
+    /* Retrofit 2 library */
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    /* Retrofit 2 GSON library converter */
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 }

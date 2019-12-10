@@ -39,7 +39,10 @@ implements TopFragment.OnFragmentInteractionListener{
             public void onResponse(Call<ArrayList<Country>> call, Response<ArrayList<Country>> response) {
                 countries = response.body();
                 topFragment = TopFragment.newInstance(countries);
-                getSupportFragmentManager().beginTransaction().add(R.id.topFragmentContainer, topFragment).commit();
+                getSupportFragmentManager()
+                  .beginTransaction()
+                  .replace(R.id.topFragmentContainer, topFragment)
+                  .commit();
             }
 
             @Override
