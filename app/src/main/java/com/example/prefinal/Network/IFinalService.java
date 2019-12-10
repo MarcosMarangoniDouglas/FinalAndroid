@@ -8,6 +8,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface IFinalService {
 
@@ -16,5 +17,8 @@ public interface IFinalService {
 
     @GET("african_crisis")
     Call<ArrayList<AfricanCrisis>> getAfricanCrisis();
+
+    @GET("countries/{code}")
+    Call<ArrayList<AfricanCrisis>> getAfricanCrisisByCode(@Path("code") String code);
 
 }

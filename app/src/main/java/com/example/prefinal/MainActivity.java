@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.prefinal.DB.AfricanCrisis;
 import com.example.prefinal.DB.Country;
 import com.example.prefinal.Network.FinalService;
 import com.example.prefinal.Network.IFinalService;
@@ -53,6 +54,19 @@ implements TopFragment.OnFragmentInteractionListener{
 
     @Override
     public void onFragmentInteraction(String code) {
-        Toast.makeText(this, "Code: " + code, Toast.LENGTH_SHORT).show();
+        finalService.getAfricanCrisisByCode(code).enqueue(new Callback<ArrayList<AfricanCrisis>>() {
+            @Override
+            public void onResponse(Call<ArrayList<AfricanCrisis>> call, Response<ArrayList<AfricanCrisis>> response) {
+                getSupportFragmentManager()
+                  .beginTransaction()
+                  .replace(R.id.bottomFragmentContainer, BottomFragment.newInstance(response.body()))
+                  .commit();
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<AfricanCrisis>> call, Throwable t) {
+                Log.d("DBX", t.getMessage());
+            }
+        });
     }
 }

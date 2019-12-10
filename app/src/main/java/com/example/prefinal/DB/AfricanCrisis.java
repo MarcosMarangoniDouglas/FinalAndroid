@@ -2,7 +2,9 @@ package com.example.prefinal.DB;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AfricanCrisis {
+import java.io.Serializable;
+
+public class AfricanCrisis implements Serializable {
 
     @SerializedName("case")
     int casef;
@@ -150,5 +152,16 @@ public class AfricanCrisis {
 
     public void setBanking_crisis(String banking_crisis) {
         this.banking_crisis = banking_crisis;
+    }
+
+    @Override
+    public String toString() {
+        return "AfricanCrisis{" +
+          "country='" + country + '\'' +
+          ", systematic_crisis=" + systematic_crisis +
+          ", currency_crisis=" + currency_crisis +
+          ", inflation_crisis=" + inflation_crisis +
+          ", banking_crisis='" + banking_crisis + '\'' +
+          '}';
     }
 }

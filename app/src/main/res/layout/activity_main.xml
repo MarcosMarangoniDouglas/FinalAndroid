@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="283dp" />
+      android:id="@+id/guideline2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintGuide_percent="0.4" />
 
     <FrameLayout
         android:id="@+id/topFragmentContainer"
@@ -25,12 +25,13 @@
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topFragmentContainer">
+      android:id="@+id/bottomFragmentContainer"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
